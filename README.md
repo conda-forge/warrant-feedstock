@@ -5,11 +5,11 @@ Home: https://github.com/capless/warrant
 
 Package license: Apache-2.0
 
-Feedstock license: BSD 3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/warrant-feedstock/blob/master/LICENSE.txt)
 
 Summary: Python class to integrate Boto3’s Cognito client so it is easy to login users. With SRP support.
 
-
+Development: https://github.com/capless/warrant
 
 Current build status
 ====================
@@ -38,6 +38,7 @@ Installing `warrant` from the `conda-forge` channel can be achieved by adding `c
 
 ```
 conda config --add channels conda-forge
+conda config --set channel_priority strict
 ```
 
 Once the `conda-forge` channel has been enabled, `warrant` can be installed with:
@@ -108,9 +109,9 @@ build distinct package versions.
 
 In order to produce a uniquely identifiable distribution:
  * If the version of a package **is not** being increased, please add or increase
-   the [``build/number``](https://conda.io/docs/user-guide/tasks/build-packages/define-metadata.html#build-number-and-string).
+   the [``build/number``](https://docs.conda.io/projects/conda-build/en/latest/resources/define-metadata.html#build-number-and-string).
  * If the version of a package **is** being increased, please remember to return
-   the [``build/number``](https://conda.io/docs/user-guide/tasks/build-packages/define-metadata.html#build-number-and-string)
+   the [``build/number``](https://docs.conda.io/projects/conda-build/en/latest/resources/define-metadata.html#build-number-and-string)
    back to 0.
 
 Feedstock Maintainers
@@ -118,5 +119,6 @@ Feedstock Maintainers
 
 * [@benhuff](https://github.com/benhuff/)
 * [@dcunn](https://github.com/dcunn/)
+* [@mxr-conda](https://github.com/mxr-conda/)
 * [@oblute](https://github.com/oblute/)
 
