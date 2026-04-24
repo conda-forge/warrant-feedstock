@@ -6,22 +6,22 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 749bde7f775c077a64edfe21464654e0a39fc93dd76e27d5d2a61997b6dcaa0a
   patches:
     - setuppy2.patch
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
-    - python >=3.6
+    - python {{ python_min }}
     - pip
   run:
-    - python >=3.6
+    - python >={{ python_min }}
     - pip
     - boto3
     - requests
@@ -29,6 +29,8 @@ requirements:
     - python-jose-cryptodome
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - warrant
 
